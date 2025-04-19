@@ -27,6 +27,7 @@ left_leg = [23, 25, 27]
 right_leg = [24, 26, 28]
 
 reps = 0
+prev_was_rep = False  # so you dont overcount reps
 
 confidence_threshold = 0.9
 depth_y_delta = 45
@@ -138,7 +139,11 @@ while cv2.waitKey(1) != 27:  # esc
         if at_depth(pose_landmarks_list, frame_height):
             cv2.putText(frame, "DEPTH DETECTED!!!", (100, int(frame_height/2)),
                         cv2.FONT_HERSHEY_PLAIN, 6, (255, 0, 255), 10)
-            reps += 1
+            if not prev_was_rep:
+                reps += 1
+                prev_was_rep = True
+        else:
+            prev_was_rep = False
 
     # get performance
     frameTime = time.time()
