@@ -3,7 +3,11 @@ import sys
 import mediapipe as mp
 import time
 import numpy as np
-import os  # only used for audio prompt (may be mac only)
+# only used for audio prompt (may be mac only, could replace with using winsound on windows)
+import os
+import sys
+
+# sys.stdout.write('\a')
 
 # 0 for webcam
 s = 0
