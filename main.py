@@ -130,7 +130,7 @@ while cv2.waitKey(1) != 27:  # esc
                     coords = (int(pose_landmarks_list[right_leg[1]].x*frame_width)+5, int(
                         pose_landmarks_list[right_leg[1]].y*frame_height))
 
-                cv2.putText(frame, f"{round(angle, 0)}°", coords,
+                cv2.putText(frame, f"{round(angle, 0)}", coords,
                             cv2.FONT_HERSHEY_PLAIN, 2, (255, 255, 255), 2)
 
         # calibrates leg length when standing upright
