@@ -5,7 +5,7 @@ import time
 import numpy as np
 # only used for audio prompt (may be mac only, could replace with using winsound on windows)
 import os
-import sys
+# import sys
 
 # sys.stdout.write('\a')
 
@@ -142,7 +142,7 @@ while cv2.waitKey(1) != 27:  # esc
         # set_calibrated_y(pose_landmarks_list)
         # check depth
         if at_depth(pose_landmarks_list, frame_height):
-            os.system("say DEPTH")  # audio cue
+            # os.system("say DEPTH")  # audio cue
             cv2.putText(frame, "DEPTH DETECTED!!!", (100, int(frame_height/2)),
                         cv2.FONT_HERSHEY_PLAIN, 6, (255, 0, 255), 10)
             if not prev_was_rep:
